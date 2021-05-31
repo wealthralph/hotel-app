@@ -32,8 +32,10 @@ class RoomProvider extends Component {
             return room;
 
         });
-        return tempItems
+        return tempItems;
     }
+
+    getRooms
     
     
 
