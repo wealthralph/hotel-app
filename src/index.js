@@ -4,12 +4,17 @@ import {BrowserRouter as Router } from 'react-router-dom'
 
 // import './index.css';
 import App from './App';
+import {RoomProvider} from './Context'
 
 ReactDOM.render(
+    <RoomProvider>
     <Router>
         <App />
-    </Router>  ,
-     document.getElementById('root')
+    </Router> 
+    </RoomProvider>
+    
+    , document.getElementById('root')
+     
 );
 
 
