@@ -57,10 +57,10 @@ class RoomProvider extends Component {
     };
 
     handleChange = event => {
-        const type = event.target.type
+        const target = event.target
         const name = event.target.name
         const value = event.target.value
-        console.log(type, name, value);
+        
     }
     
     filterRooms = () => {

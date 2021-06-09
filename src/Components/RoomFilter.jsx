@@ -3,11 +3,11 @@ import {useContext} from 'react'
 import {RoomContext} from '../Context'
 import Title from './Title'
 
-const getUnique = {items,value} => {
-    return [...new set(item.map(item => item[value]))]
+const getUnique = (items,value) => {
+    return [...new Set(items.map(item => item[value]))]
 }
 
-const RoomFilter = () => {
+const RoomFilter = ({room}) => {
     const context =useContext(RoomContext);
 
     const {
@@ -23,9 +23,15 @@ const RoomFilter = () => {
         maxSize
     } = context ;
 
-    let types = getUnique(rooms, 'type');
+    let types = getUnique(room, 'type');
 
-    types = ['all', ...types]
+    types = ['all', ...types];
+
+    types = types.map((item, index) => {
+        return (
+            <option value={item} key={index}> {item} </option>
+        )
+    })
 
     return (
         <section className='filter-container'>
